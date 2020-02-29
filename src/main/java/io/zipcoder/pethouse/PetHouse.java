@@ -8,10 +8,11 @@ import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Pets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
-public class PetHouse {
+public class PetHouse{
     Integer numOfPets;
     List<Pets> petHouse;
     Pets newPet;
@@ -32,7 +33,7 @@ public class PetHouse {
 
     public void placePetsInPetHouse(){
         this.petHouse = new ArrayList<>();
-        for (int i = 1; i < this.numOfPets; i++) {
+        for (int i = 1; i <= this.numOfPets; i++) {
             evalTypeOfPetAndCreateNewPet();
             petHouse.add(this.newPet);
         }
@@ -65,5 +66,6 @@ public class PetHouse {
             return "cat";
         }else return "bird";
     }
+
 
 }
