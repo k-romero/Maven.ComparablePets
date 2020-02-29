@@ -13,10 +13,10 @@ abstract public class Pets implements petActions, Comparable<Pets>{
 
     public void setName(String name) { this.name = name; }
 
-    @Override
-    public int compareTo(Pets o) {
-        return 0;
-    }
 
+    @Override
+    public int compareTo(Pets otherPet) {
+        return this.name.compareTo(otherPet.getName());
+    }
 
 }

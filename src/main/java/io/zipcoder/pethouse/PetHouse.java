@@ -8,11 +8,10 @@ import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Pets;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
-public class PetHouse{
+public class PetHouse {
     Integer numOfPets;
     List<Pets> petHouse;
     Pets newPet;
@@ -66,6 +65,7 @@ public class PetHouse{
             return "cat";
         }else return "bird";
     }
+
 
 
 }
