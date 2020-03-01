@@ -10,6 +10,7 @@ import static  org.hamcrest.CoreMatchers.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PetHouseTest {
 
@@ -46,12 +47,17 @@ public class PetHouseTest {
         Pets dog = new Dog("Bernie");
         Cat cat = new Cat("Bingley");
         Pets bird = new Bird("Tweety");
-        petHouse.petHouse.add(dog);
-        petHouse.petHouse.add(bird);
-        petHouse.petHouse.add(cat);
+        petHouse.setTypeAndAddPetForTesting(dog);
+        petHouse.setTypeAndAddPetForTesting(cat);
+        petHouse.setTypeAndAddPetForTesting(bird);
 
         //When
-        Collections.sort(petHouse.petHouse);
+        Collections.sort(petHouse.petHouse, new Comparator<Pets>(){
+            @Override
+            public int compare(Pets o1, Pets o2) {
+                return o1.getType().compareTo(o2.getType());
+            }
+        });
 
         //Then
         Assert.assertTrue(petHouse.petHouse.get(0) instanceof Bird);

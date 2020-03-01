@@ -34,6 +34,7 @@ public class PetHouse {
         this.petHouse = new ArrayList<>();
         for (int i = 1; i <= this.numOfPets; i++) {
             evalTypeOfPetAndCreateNewPet();
+            this.newPet.setType();
             petHouse.add(this.newPet);
         }
     }
@@ -68,6 +69,11 @@ public class PetHouse {
 
     public void setNumOfPets(Integer numOfPets) {
         this.numOfPets = numOfPets;
+    }
+
+    public void setTypeAndAddPetForTesting(Pets pet){
+        pet.setType();
+        this.petHouse.add(pet);
     }
 
 }
