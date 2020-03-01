@@ -66,6 +66,8 @@ public class PetHouse {
         }else return "bird";
     }
 
-
+    public void setNumOfPets(Integer numOfPets) {
+        this.numOfPets = numOfPets;
+    }
 
 }
