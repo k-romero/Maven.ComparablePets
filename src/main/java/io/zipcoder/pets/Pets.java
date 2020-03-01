@@ -16,6 +16,7 @@ abstract public class Pets implements petActions, Comparable<Pets>{
 
     @Override
     public int compareTo(Pets otherPet) {
+        //Fill out this method to pass test
         return this.name.compareTo(otherPet.getName());
     }
 

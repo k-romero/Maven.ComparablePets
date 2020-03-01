@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class PetHouseTest {
+
     @Test
     public void sortNameTest(){
         //Given
@@ -34,6 +35,28 @@ public class PetHouseTest {
         Assert.assertThat(petHouse.petHouse.get(1).getName(), is("Bingley"));
         Assert.assertThat(petHouse.petHouse.get(2).getName(), is("Tweety"));
 
+    }
+
+    @Test
+    public void sortTypeTest(){
+        //Given
+        PetHouse petHouse = new PetHouse();
+        petHouse.setNumOfPets(3);
+        petHouse.petHouse = new ArrayList<>();
+        Pets dog = new Dog("Bernie");
+        Cat cat = new Cat("Bingley");
+        Pets bird = new Bird("Tweety");
+        petHouse.petHouse.add(dog);
+        petHouse.petHouse.add(bird);
+        petHouse.petHouse.add(cat);
+
+        //When
+        Collections.sort(petHouse.petHouse);
+
+        //Then
+        Assert.assertTrue(petHouse.petHouse.get(0) instanceof Bird);
+        Assert.assertTrue(petHouse.petHouse.get(1) instanceof Cat);
+        Assert.assertTrue(petHouse.petHouse.get(2) instanceof Dog);
     }
 
 }
