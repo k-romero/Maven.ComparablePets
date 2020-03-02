@@ -59,7 +59,7 @@ public class PetHouse {
         }
     }
 
-    private String petType(Pets pet) {
+    public String petType(Pets pet) {
         if(pet instanceof Dog){
             return "dog";
         }else if(pet instanceof Cat){
@@ -71,6 +71,7 @@ public class PetHouse {
         this.numOfPets = numOfPets;
     }
 
+    //for testing
     public void setTypeAndAddPetForTesting(Pets pet){
         pet.setType();
         this.petHouse.add(pet);

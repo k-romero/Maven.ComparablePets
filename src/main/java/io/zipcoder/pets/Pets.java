@@ -1,6 +1,8 @@
 package io.zipcoder.pets;
 
-abstract public class Pets implements petActions, Comparable<Pets>{
+import java.util.Comparator;
+
+abstract public class Pets implements petActions, Comparable<Pets>, Comparator<Pets> {
     String name;
     String type;
 
@@ -32,6 +34,10 @@ abstract public class Pets implements petActions, Comparable<Pets>{
     public int compareTo(Pets otherPet) {
         //Fill out this method to pass test
         return this.name.compareTo(otherPet.getName());
+    }
+    @Override
+    public int compare(Pets o1, Pets o2) {
+        return o1.getType().compareTo(o2.getType());
     }
 
 }
